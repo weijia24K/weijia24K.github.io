@@ -1,31 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>人群计数</title>
     <link rel="stylesheet" href="./layui/css/layui.css">
-
 </head>
-<body class="site-home layui-bg-black" id="weijia_home" data-date="6-2">
-<!--<script>-->
-<!--layer.msg('hello');-->
-<!--</script>-->
-<!--<i class="layui-icon layui-icon-face-smile" style="font-size:30px;color:#1E9FFF">&#xe60c;</i>-->
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">人群计数系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">主页</a></li>
+            <li class="layui-nav-item"><a href="">简历</a></li>
+            <li class="layui-nav-item"><a href="">导师</a></li>
+<!--            <li class="layui-nav-item">-->
+<!--                <a href="javascript:;">其它系统</a>-->
+<!--                <dl class="layui-nav-child">-->
+<!--                    <dd><a href="">邮件管理</a></dd>-->
+<!--                    <dd><a href="">消息管理</a></dd>-->
+<!--                    <dd><a href="">授权管理</a></dd>-->
+<!--                </dl>-->
+<!--            </li>-->
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    贤心
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">研究问题</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">问题一</a></dd>
+                        <dd><a href="javascript:;">问题二</a></dd>
+                        <dd><a href="javascript:;">问题三</a></dd>
+<!--                        <dd><a href="">超链接</a></dd>-->
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">解决方案</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">方案一</a></dd>
+                        <dd><a href="javascript:;">方案二</a></dd>
+                        <dd><a href="javascript:;">方案三</a></dd>
+<!--                        <dd><a href="">超链接</a></dd>-->
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">数据集</a></li>
+                <li class="layui-nav-item"><a href="">成果</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="padding:20px">
+            <h1 align="center">人群检测方法</h1>
+        </div>
+        <hr class="layui-bg-orange">
+        <div style="padding: 120px; layui-anim site-desc site-desc-anim" align="center">
+            <div class="layui-carousel" id="test1" style="height:600px" lay-filter="carofilter">
+                <div carousel-item>
+                    <div class="layui-bg-white"><img src="./pic/1.jpg" align="center"/></div>
+                    <div class="layui-bg-white"><img src="./pic/2.jpg" align="center"/></div>
+                    <div class="layui-bg-white"><img src="./pic/3.jpg" align="center"/></div>
+                    <div class="layui-bg-white"><img src="./pic/4.jpg" align="center"/></div>
+                    <div class="layui-bg-white"><img src="./pic/5.jpg" align="center"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
 <script type="text/javascript" src="./layui/layui.js"></script>
-
 <script>
-<!--layui.use(['layer','form'],function(){-->
-<!--    var layer = layui.layer-->
-<!--    ,form = layui.form;-->
-<!--    layer.msg('hello');-->
-<!--});-->
-<!--var b = 1920/460;//我的图片比例-->
-<!--    //获取浏览器宽度-->
-<!--    var W = $(window).width();-->
-<!--    var H = $(window).height();-->
-
+//JavaScript代码区域
 layui.use('element', function(){
-    var element = layui.element;
+  var element = layui.element;
+
 });
 
 layui.use('carousel', function(){
@@ -33,73 +104,13 @@ layui.use('carousel', function(){
   //建造实例
   carousel.render({
     elem: '#test1'
-    ,width: '100%' //设置容器宽度
+    ,width: '80%' //设置容器宽度
     ,height: '600px'
     ,arrow: 'always' //始终显示箭头
     //,anim: 'fade' //切换动画方式
   });
 });
 
-<!--$(window).resize(function () {-->
-<!--    // setBanner();-->
-<!--    window.location.reload()-->
-<!--})-->
-
-
-
-
-
 </script>
-<div class="layui-header header header-index">
-    <div class="layui-main">
-        <a class="layui-icon" href="/">
-            <img src="./photo/crowdcount_logo.jpg" alt="CrowdCount">
-        </a>
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item layui-this">
-                <a href="javascript:;">个人简历</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">本科</a></dd>
-                    <dd><a href="">研究生</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item"><a href="paperTimeLine.html">研究路线<span class="layui-badge-dot"></span></a></li>
-            <li class="layui-nav-item"><a href="*">研究思路</a></li>
-            <li class="layui-nav-item"><a href="*">研究展示</a></li> //点击后弹出密度图以及人数
-            <li class="layui-nav-item"><a href="*">关于</a></li>
-            <a href="" style="color:white"><img src="./layui/images/face/7.gif" class="layui-nav-img"
-                                                alt="text">我的主页</a>
-        </ul>
-    </div>
-</div>
-<hr class="layui-bg-orange">
-<div class="site-banner" style="text-align:center;height:650px">
-    <div class="site-banner-main">
-        <div class="layui-anim site-desc site-desc-anim" style="height:600px">
-            <h5 class="web-font-desc" style="font-size:larger">这是我的主要功能区域</h5>
-            <div class="layui-carousel" id="test1" style="height:600px" lay-filter="carofilter">
-                <div carousel-item>
-                    <div class="layui-bg-black"><img src="./pic/1.jpg" align="center"/></div>
-                    <div class="layui-bg-black"><img src="./pic/2.jpg" align="center"/></div>
-                    <div class="layui-bg-black"><img src="./pic/3.jpg" align="center"/></div>
-                    <div class="layui-bg-black"><img src="./pic/4.jpg" align="center"/></div>
-                    <div class="layui-bg-black"><img src="./pic/5.jpg" align="center"/></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<hr class="layui-bg-orange">
-<div class="layui-footer footer footer-index">
-    <div class="layui-main" style="text-align:center">
-        <p>该网站由左莉莎亲力亲为</p>
-        <span class="layui-breadcrumb" lay-separator="-">
-            <a>2021</a>
-            <a href="/">weijia24k.github.io</a>
-            <a href="http://www.yzu.edu.cn/">YZU license</a>
-        </span>
-        <p>创建时间: 2020年05月22日</p>
-    </div>
-</div>
 </body>
 </html>
